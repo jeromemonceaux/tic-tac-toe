@@ -1,5 +1,6 @@
 import { BLOCK, SYMBOL } from 'typings'
 import checkBoard from './check-board'
+import { BoardSize } from 'typings'
 
 interface Input {
   board: BLOCK[]
@@ -22,14 +23,22 @@ export default function getUpdatedGameState({
   playerTurn,
   turnNumber,
 }: Input): Output {
-  const newBoard = [...board]
+
+  // TODO JM : Suboptimal 
+  var newBoard = new Array(BoardSize[1]*BoardSize[0])
+  for( var i = 0; i < board.length; i++){
+    newBoard[i] = board[i]
+  }
+
   newBoard[boardIndex] = playerTurn
-  const outcome = checkBoard({ newBoard, playerTurn, turnNumber })
+  //const outcome = checkBoard({ newBoard, playerTurn, turnNumber })
 
   let newMessage = ''
   let newIsGameDone = false
 
-  switch (outcome) {
+  newMessage = "" //`${playerTurn === 'X' ? 'O' : 'X'}'s Turn`
+/* JM EDIT
+  switch (outcome') {
     case 'XWIN': {
       newMessage = 'X WINS!'
       newIsGameDone = true
@@ -49,7 +58,7 @@ export default function getUpdatedGameState({
     default:
       newMessage = `${playerTurn === 'X' ? 'O' : 'X'}'s Turn`
   }
-
+*/
   return {
     newBoard,
     newMessage,

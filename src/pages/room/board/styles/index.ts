@@ -3,13 +3,13 @@ import styled, { css } from 'styled-components'
 export const Block = styled.div`
   ${({ theme }) => css`
     align-items: center;
-    border: solid 1px ${theme.colors.black};
+    border: solid 1px ${theme.colors.lightGray};
     cursor: pointer;
     display: flex;
-    height: 70px;
+    height: 10px;
     justify-content: center;
     transition: ${theme.transition};
-    width: 70px;
+    width: 10px;
   `}
 `
 

@@ -1,6 +1,9 @@
 export type BLOCK = SYMBOL | null
 export type SYMBOL = 'X' | 'O'
 
+export const BoardSize = [10, 10]
+
+
 export interface Room {
   board: Array<SYMBOL | null>
   id: string

@@ -30,7 +30,7 @@ const Home: FC = () => {
     history.push(`/r/${roomId}`)
   }
 
-  return (
+ return (
     <>
       <H1>Home Page</H1>
       <Button onClick={goToJoinRoom}>Join Room</Button>

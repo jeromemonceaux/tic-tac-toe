@@ -19,6 +19,7 @@ const LoginPage: FC = () => {
   const { redirect, player } = useSearchParams()
 
   const performRedirect = useCallback(() => {
+    console.log("perform redirect " + !redirect + " player " + !player)
     if (!redirect) return history.push('/')
     if (!player) return history.push(`/${redirect}`)
     return history.push(`/${redirect}?player=${player}`)
@@ -40,16 +41,16 @@ const LoginPage: FC = () => {
 
     setIsLoggingIn(true)
 
-    try {
+   try {
       await auth.signInWithEmailAndPassword(email, password)
-      performRedirect()
-    } catch (err) {
+       performRedirect()
+   } catch (err) {
       setFirebaseErr(err.message)
       setIsLoggingIn(false)
     }
   }
 
-  function goToSignup() {
+ function goToSignup() {
     history.push('/signup')
   }
 

@@ -10,7 +10,7 @@ const Layout: FC = ({ children }) => {
 
   return (
     <Content>
-      <Title>Tic Tac Toe</Title>
+      <Title>Simplex test collective path</Title>
       <Card>
         {currentUser && <P>Logged in as {currentUser.displayName}</P>}
         {children}

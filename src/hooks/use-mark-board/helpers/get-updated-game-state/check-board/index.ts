@@ -15,11 +15,14 @@ export default function checkBoard({
   playerTurn,
   turnNumber,
 }: Input): CheckBoardOutput {
+  return 'DRAW'
+  /* JM EDIT 
   if (turnNumber >= 5) {
     if (playerTurn === 'X' && checkWin(newBoard, 'X')) return 'XWIN'
     if (playerTurn === 'O' && checkWin(newBoard, 'O')) return 'OWIN'
     if (turnNumber === 9) return 'DRAW'
   }
+  */
 
   return 'NONE'
 }

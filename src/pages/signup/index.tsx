@@ -52,8 +52,14 @@ const SignupPage: FC = () => {
         password
       )
 
+console.log("response " + response )
+
+console.log("response.user " + response.user )
+
       if (!response.user) throw new Error('Something went wrong!')
 
+      console.log("response.user.email " + response.user.email )
+      
       await db
         .collection('users')
         .doc(response.user.uid)
